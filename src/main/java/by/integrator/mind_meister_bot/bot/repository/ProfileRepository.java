@@ -7,5 +7,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ProfileRepository extends JpaRepository<Profile, Long> {
     Profile findByUserName(String userName);
+    Profile findByChatId(Long chatId);
 
 }

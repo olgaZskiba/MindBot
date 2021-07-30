@@ -1,5 +1,6 @@
 package by.integrator.mind_meister_bot.bot.bean;
 
+import by.integrator.mind_meister_bot.bot.states.ProfileBotState;
 import lombok.*;
 
 import javax.persistence.*;
@@ -43,6 +44,19 @@ public class Profile implements Serializable {
 
     @Column(name = "username")
     private String userName;
+
+    @Column(name = "BotLastMessageId")
+    private Integer botLastMessageId;
+
+    @Column(name = "BotLastMessageDate")
+    private Integer botLastMessageDate;
+
+    @Column(name = "BotLastMessageEditable", columnDefinition = "TINYINT(1)")
+    private Boolean botLastMessageEditable;
+
+    @Column(name = "ProfileBotState") // nullable = false
+    @Enumerated(EnumType.ORDINAL)
+    private ProfileBotState profileBotState;
 
 //    @Column(name = "amount", columnDefinition = "0")
 //    private Integer amount;
